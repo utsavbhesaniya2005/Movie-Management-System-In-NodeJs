@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Management System</title>
+
+    <!-- Css -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="/css/addMovie.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2 class="text-center my-4">Edit Movie Poster</h2>
+        <form method="post" action="/updateMovies/<%= movieData.id %>" enctype="multipart/form-data" class="mt-3">
+            <div class="mb-3">
+                <label for="title" class="form-label">Movie Title :-</label>
+                <input type="text" class="form-control" name="title" value="<%= movieData.title %>">
+            </div>
+            
+            <div class="mb-3">
+                <label for="description" class="form-label">Description :-</label>
+                <input type="text" class="form-control" name="description" value="<%= movieData.description %>"></input>
+            </div>
+            
+            <div class="mb-3">
+                <label for="releaseDate" class="form-label">Release Date :-</label>
+                <input type="date" class="form-control" name="releaseDate"  value="<%= movieData.releaseDate ? movieData.releaseDate.toISOString('').split('T')[0] : '' %>">
+            </div>
+            
+            <div class="mb-3">
+                <label for="genre" class="form-label">Genre :-</label>
+                <select class="form-select" name="genre">
+                    <option value="Action" <%= movieData.genre === 'Action' ? 'selected' : '' %>>Action</option>
+                    <option value="Comedy" <%= movieData.genre === 'Comedy' ? 'selected' : '' %>>Comedy</option>
+                    <option value="Drama" <%= movieData.genre === 'Drama' ? 'selected' : '' %>>Drama</option>
+                    <option value="Horror" <%= movieData.genre === 'Horror' ? 'selected' : '' %>>Horror</option>
+                    <option value="Sci-Fi" <%= movieData.genre === 'Sci-Fi' ? 'selected' : '' %>>Sci-Fi</option>
+                    <option value="Other" <%= movieData.genre === 'Other' ? 'selected' : '' %>>Other</option>
+                </select>
+            </div>
+            
+            <div class="mb-3">
+                <label for="rating" class="form-label">Rating :-</label>
+                <select class="form-select" name="rating">
+                    <option value="1" <%= movieData.rating === '1' ? 'selected' : '' %>>1</option>
+                    <option value="2" <%= movieData.rating === '2' ? 'selected' : '' %>>2</option>
+                    <option value="3" <%= movieData.rating === '3' ? 'selected' : '' %>>3</option>
+                    <option value="4" <%= movieData.rating === '4' ? 'selected' : '' %>>4</option>
+                    <option value="5" <%= movieData.rating === '5' ? 'selected' : '' %>>5</option>
+                    <option value="6" <%= movieData.rating === '6' ? 'selected' : '' %>>6</option>
+                    <option value="7" <%= movieData.rating === '7' ? 'selected' : '' %>>7</option>
+                    <option value="8" <%= movieData.rating === '8' ? 'selected' : '' %>>8</option>
+                    <option value="9" <%= movieData.rating === '9' ? 'selected' : '' %>>9</option>
+                    <option value="10" <%= movieData.rating === '10' ? 'selected' : '' %>>10</option>
+                </select>
+            </div>
+            
+            <div class="mb-3">
+                <label for="poster" class="form-label">Upload Movie Poster :-</label>
+                <input type="file" class="form-control" name="moviePoster">
+            </div>
+            
+            <div class="d-flex justify-content-between mt-5">
+                <button type="submit" class="btn btn-submit" style="padding: 10px 30px;">Submit</button>
+                <button type="reset" class="btn btn-secondary btn-cancel" style="padding: 10px 30px;">Cancel</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

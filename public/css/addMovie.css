@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #f8f9fa;
+}
+h2{
+    color: #1f74a5;
+}
+label{
+    font-weight: 600;
+    font-size: 18px;
+    color: #063753;
+}
+.btn-submit{
+    padding: 10px 30px;
+    background-color: #4dace4;
+    color: white;
+    transition: all 0.2s ease-in-out;
+}
+.btn-submit:hover{
+    background-color: #063753;
+    color: white;
+}

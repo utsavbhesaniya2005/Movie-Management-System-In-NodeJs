@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.btn-add{
+    color: azure;
+    border: 1px solid azure;
+    padding: 10px 30px 5px 30px;
+    font-size: 18px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 600;
+    letter-spacing: .5px;
+    transition: all .2s ease-in-out;
+}
+
+.btn-add:hover{
+    color: rgb(21, 17, 17);
+    background-color: azure;
+}
+
+/* Card Design */
+.movie-card{
+    position: relative;
+    width: 100%;
+    background: #222;
+    color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease-in-out;
+}
+.movie-card:hover {
+    transform: scale(1.05);
+}
+.movie-card:hover .eye-icon, .movie-card:hover .trash-bin, .movie-card:hover .edit-icon{
+    opacity: 1;
+    visibility: visible;
+    top: 15px;
+}
+.movie-card:not(:hover) .eye-icon, .movie-card:not(:hover) .trash-bin, .movie-card:not(:hover) .edit-icon{
+    right: -150%;
+}
+
+.movie-header{
+    height: 200px;
+}
+.header-icon-container{
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 32px;
+    background: black;
+    border-radius: 50%;
+}
+.header-icon-container i{
+    transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.eye-icon, .trash-bin, .edit-icon{
+    position: absolute;
+    right: 110px;
+    display: block;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    background-color: #4dace4;
+    font-size: 20px;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.edit-icon{
+    right: 60px;
+    background-color: green;
+}
+.trash-bin{
+    right: 10px;
+    background-color: rgb(226, 13, 13);
+}
+.eye-icon i, .trash-bin i, .edit-icon i{
+    color: white;
+    transition: all 0.2s linear;
+}
+.eye-icon:hover i, .trash-bin:hover i, .edit-icon:hover i, .header-icon-container:hover i{
+    transform: translateX(-2px) translateY(-5px);
+    box-shadow: 10px 10px 10px 15px rgb(0, 0, 0, 0.3);
+}
+
+.movie-content{
+    padding: 15px;
+}
+.movie-title{
+    margin: 0;
+}
+.movie-info{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.info-section{
+    text-align: center;
+}
