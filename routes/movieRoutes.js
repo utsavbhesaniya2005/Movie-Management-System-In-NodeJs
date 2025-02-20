@@ -21,4 +21,7 @@ routes.post('/updateMovies/:id', upload.single('moviePoster'), routeController.u
 // Delete Data
 routes.get('/deleteMovies/:id', routeController.delete);
 
+// Single View Page Render
+routes.get('/singleMovie/:id', routeController.singleMovie)
+
 module.exports = routes;

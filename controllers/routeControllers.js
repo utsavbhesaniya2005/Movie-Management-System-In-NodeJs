@@ -80,6 +80,13 @@ const deleteController = async (req, res) => {
     res.redirect('/');
 }
 
+const singleMovieController = async (req, res) => {
+
+    const singleMovie = await movieModel.findById(req.params.id);
+
+    res.render('singleView', { singleMovie });
+}
+
 module.exports = {
     default : defaultController,
     add : addConntroller,
@@ -87,4 +94,5 @@ module.exports = {
     edit : editConntroller,
     updateMovie : updateMovieController,
     delete : deleteController,  
+    singleMovie : singleMovieController,
 };

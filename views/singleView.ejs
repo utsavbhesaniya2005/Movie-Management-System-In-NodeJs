@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Management System</title>
+
+    <!-- Css -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="/css/singleMovie.css">
+</head>
+<body>
+
+
+    <h2>Viewing Single Movie Poster</h2>
+
+    <div class="wrap animate pop">
+        <div class="overlay">
+            <div class="overlay-content animate slide-left delay-2">
+                <h3 class="animate slide-left pop delay-4"><%= singleMovie.title %></h3><br>
+                <p class="animate slide-left pop delay-5" style="color: white; margin-bottom: 2.5rem;">Release Date: <em><%= new Date(singleMovie.releaseDate).toLocaleDateString('en-IN') %></em></p>
+                <p class="animate slide-left pop delay-5" style="color: white; margin-bottom: 2.5rem;">Genre: <em><%= singleMovie.genre %></em></p>
+                <p class="animate slide-left pop delay-5" style="color: white; margin-bottom: 2.5rem;">Rating: <em><%= singleMovie.rating %></em></p>
+            </div>
+            <div class="image-content animate slide delay-5">
+                <img src="../<%= singleMovie.moviePoster %>" class="h-100 w-100" alt="Movie Poster Img">
+            </div>
+            <div class="dots animate">
+                <div class="dot animate slide-up delay-6"></div>
+                <div class="dot animate slide-up delay-7"></div>
+                <div class="dot animate slide-up delay-8"></div>
+            </div>
+        </div>
+        <div class="text">
+            <p><img class="inset" src="../<%= singleMovie.moviePoster %>" alt="Movie Poster" /><%= singleMovie.description %></p>
+        </div>
+    </div>
+</body>
+</html>
